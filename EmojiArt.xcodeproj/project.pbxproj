@@ -12,6 +12,8 @@
 		F3A48260212C0A40009B57B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3A4825F212C0A40009B57B5 /* Assets.xcassets */; };
 		F3A48263212C0A40009B57B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3A48261212C0A40009B57B5 /* LaunchScreen.storyboard */; };
 		F3A4826C212C0A89009B57B5 /* EmojiArtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A4826B212C0A89009B57B5 /* EmojiArtViewController.swift */; };
+		F3A4826E212C0BDD009B57B5 /* EmojiArtView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A4826D212C0BDD009B57B5 /* EmojiArtView.swift */; };
+		F3A48270212C1226009B57B5 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A4826F212C1226009B57B5 /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		F3A48262212C0A40009B57B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3A48264212C0A40009B57B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3A4826B212C0A89009B57B5 /* EmojiArtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiArtViewController.swift; sourceTree = "<group>"; };
+		F3A4826D212C0BDD009B57B5 /* EmojiArtView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiArtView.swift; sourceTree = "<group>"; };
+		F3A4826F212C1226009B57B5 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +59,10 @@
 			isa = PBXGroup;
 			children = (
 				F3A4826B212C0A89009B57B5 /* EmojiArtViewController.swift */,
-				F3A4826A212C0A63009B57B5 /* Supporting files */,
 				F3A4825C212C0A3E009B57B5 /* Main.storyboard */,
+				F3A4826F212C1226009B57B5 /* Utilities.swift */,
+				F3A4826D212C0BDD009B57B5 /* EmojiArtView.swift */,
+				F3A4826A212C0A63009B57B5 /* Supporting files */,
 				F3A48264212C0A40009B57B5 /* Info.plist */,
 			);
 			path = EmojiArt;
@@ -145,6 +151,8 @@
 			files = (
 				F3A48259212C0A3E009B57B5 /* AppDelegate.swift in Sources */,
 				F3A4826C212C0A89009B57B5 /* EmojiArtViewController.swift in Sources */,
+				F3A48270212C1226009B57B5 /* Utilities.swift in Sources */,
+				F3A4826E212C0BDD009B57B5 /* EmojiArtView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
