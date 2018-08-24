@@ -52,7 +52,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1p0-IM-ZCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="84" y="-268"/>
+            <point key="canvasLocation" x="899" y="188"/>
         </scene>
         <!--Emoji Art View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -96,15 +96,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="84" y="429"/>
+            <point key="canvasLocation" x="195" y="963"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="NtY-Ly-WQ1">
             <objects>
                 <splitViewController id="5iw-Yd-6VH" sceneMemberID="viewController">
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="showDetail" id="JSZ-Cb-Zer"/>
                         <segue destination="fhf-gQ-xt9" kind="relationship" relationship="masterViewController" id="Z6M-Nm-RSV"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="detailViewController" id="fw4-9N-fq6"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Pd-mB-hQX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -127,7 +127,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gV-Ms-gDz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-688" y="-267"/>
+            <point key="canvasLocation" x="195" y="189"/>
         </scene>
     </scenes>
 </document>
