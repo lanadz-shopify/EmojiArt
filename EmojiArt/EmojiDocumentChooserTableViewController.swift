@@ -10,7 +10,15 @@ import UIKit
 
 class EmojiDocumentChooserTableViewController: UITableViewController {
 
-   var emojiArtDocuments = ["One", "Two", "Three"]
+    var emojiArtDocuments = ["One", "Two", "Three"]
+
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        if splitViewController?.preferredDisplayMode != .primaryOverlay {
+            splitViewController?.preferredDisplayMode = .primaryOverlay
+        }
+    }
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
