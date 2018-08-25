@@ -67,14 +67,20 @@
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gwg-b4-P2b">
                                         <rect key="frame" x="0.0" y="0.0" width="791.5" height="814"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="250" constant="814" id="05W-n4-lGe"/>
+                                            <constraint firstAttribute="width" priority="250" constant="791.5" id="9BY-nf-ktd"/>
+                                        </constraints>
                                     </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Gwg-b4-P2b" secondAttribute="trailing" id="3jm-Pz-GSB"/>
-                                    <constraint firstAttribute="bottom" secondItem="Gwg-b4-P2b" secondAttribute="bottom" id="5sZ-Rt-uyq"/>
-                                    <constraint firstItem="Gwg-b4-P2b" firstAttribute="top" secondItem="hz9-JI-grB" secondAttribute="top" id="I47-eb-QWe"/>
-                                    <constraint firstItem="Gwg-b4-P2b" firstAttribute="leading" secondItem="hz9-JI-grB" secondAttribute="leading" id="u4c-AJ-40r"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Gwg-b4-P2b" secondAttribute="trailing" id="3jm-Pz-GSB"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Gwg-b4-P2b" secondAttribute="bottom" id="5sZ-Rt-uyq"/>
+                                    <constraint firstItem="Gwg-b4-P2b" firstAttribute="centerY" secondItem="hz9-JI-grB" secondAttribute="centerY" id="8O1-Na-CtT"/>
+                                    <constraint firstItem="Gwg-b4-P2b" firstAttribute="top" relation="greaterThanOrEqual" secondItem="hz9-JI-grB" secondAttribute="top" id="I47-eb-QWe"/>
+                                    <constraint firstItem="Gwg-b4-P2b" firstAttribute="centerX" secondItem="hz9-JI-grB" secondAttribute="centerX" id="pYv-Sh-qIB"/>
+                                    <constraint firstItem="Gwg-b4-P2b" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hz9-JI-grB" secondAttribute="leading" id="u4c-AJ-40r"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -91,6 +97,8 @@
                     <connections>
                         <outlet property="dropZone" destination="hz9-JI-grB" id="gml-Vh-Nci"/>
                         <outlet property="scrollView" destination="Gwg-b4-P2b" id="UML-jJ-qh3"/>
+                        <outlet property="scrollViewHeight" destination="05W-n4-lGe" id="dxQ-2e-Ate"/>
+                        <outlet property="scrollViewWidth" destination="9BY-nf-ktd" id="Igg-cZ-YKa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
