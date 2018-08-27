@@ -8,7 +8,14 @@
 
 import UIKit
 
-class EmojiArtViewController: UIViewController, UIDropInteractionDelegate , UIScrollViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDragDelegate {
+class EmojiArtViewController: UIViewController,
+    UIDropInteractionDelegate ,
+    UIScrollViewDelegate,
+    UICollectionViewDataSource,
+    UICollectionViewDelegate,
+    UICollectionViewDelegateFlowLayout,
+    UICollectionViewDragDelegate,
+    UICollectionViewDropDelegate {
 
     @IBOutlet weak var scrollViewHeight: NSLayoutConstraint!
 
@@ -68,6 +75,7 @@ class EmojiArtViewController: UIViewController, UIDropInteractionDelegate , UISc
             emojiCollectionView.delegate = self
             emojiCollectionView.dataSource = self
             emojiCollectionView.dragDelegate = self
+            emojiCollectionView.dropDelegate = self
         }
     }
 
@@ -91,6 +99,7 @@ class EmojiArtViewController: UIViewController, UIDropInteractionDelegate , UISc
     }
 
     func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        session.localContext = collectionView
         return dragItems(at: indexPath)
     }
 
@@ -106,6 +115,20 @@ class EmojiArtViewController: UIViewController, UIDropInteractionDelegate , UISc
         } else {
             return []
         }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, canHandle session: UIDropSession) -> Bool {
+        return session.canLoadObjects(ofClass: NSAttributedString.self)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
+        let isSelf = (session.localDragSession?.localContext as? UICollectionView) == collectionView
+
+        return UICollectionViewDropProposal(operation: isSelf ? .move : .copy, intent: .insertAtDestinationIndexPath)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
+            
     }
 
     func dropInteraction(_ interaction: UIDropInteraction, canHandle session: UIDropSession) -> Bool {
