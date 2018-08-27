@@ -131,14 +131,27 @@ class EmojiArtViewController: UIViewController,
         let destinationIndexPath = coordinator.destinationIndexPath ?? IndexPath(item: 0, section: 0)
         for item in coordinator.items {
             if let sourceIndexPath = item.sourceIndexPath {
-                if let attributtedString = item.dragItem.localObject as? NSAttributedString {
+                if let attributedString = item.dragItem.localObject as? NSAttributedString {
                     collectionView.performBatchUpdates({
                         emojis.remove(at: sourceIndexPath.item)
-                        emojis.insert(attributtedString.string, at: destinationIndexPath.item)
+                        emojis.insert(attributedString.string, at: destinationIndexPath.item)
                         collectionView.deleteItems(at: [sourceIndexPath])
                         collectionView.insertItems(at: [destinationIndexPath])
                     })
                     coordinator.drop(item.dragItem, toItemAt: destinationIndexPath)
+                }
+            } else {
+                let placeHolderContext = coordinator.drop(item.dragItem, to: UICollectionViewDropPlaceholder(insertionIndexPath: destinationIndexPath, reuseIdentifier: "DropPlaceholderCell"))
+                item.dragItem.itemProvider.loadObject(ofClass: NSAttributedString.self) { (provider, error) in
+                    DispatchQueue.main.async {
+                        if let attributedString = provider as? NSAttributedString {
+                            placeHolderContext.commitInsertion(dataSourceUpdates: { (insertionIndexPath) in
+                                self.emojis.insert(attributedString.string, at: insertionIndexPath.item)
+                            })
+                        } else {
+                            placeHolderContext.deletePlaceholder()
+                        }
+                    }
                 }
             }
         }
