@@ -148,6 +148,9 @@
                                                     <rect key="frame" x="8" y="8" width="64" height="64"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="39"/>
                                                     <state key="normal" title="+"/>
+                                                    <connections>
+                                                        <action selector="addEmoji:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qh0-4t-qOH"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </view>
