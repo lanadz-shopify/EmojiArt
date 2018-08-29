@@ -115,9 +115,10 @@ UICollectionViewDropDelegate {
             if let inputCell = cell as? TextFiledCollectionViewCell {
                 inputCell.resignationHandler = { [weak self, unowned inputCell] in
                     if let text = inputCell.textField.text {
-                        self?.emojis = (text.map { String($0) }) + self!.emojis
+                        self?.emojis = ((text.map { String($0) }) + self!.emojis).uniquified
                     }
                     self?.addingEmoji = false
+                    inputCell.textField.text = ""
                     self?.emojiCollectionView.reloadData()
                 }
             }
