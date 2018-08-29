@@ -112,6 +112,15 @@ UICollectionViewDropDelegate {
             return cell
         } else if addingEmoji{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EmojiTextFieldCell", for: indexPath)
+            if let inputCell = cell as? TextFiledCollectionViewCell {
+                inputCell.resignationHandler = { [weak self, unowned inputCell] in
+                    if let text = inputCell.textField.text {
+                        self?.emojis = (text.map { String($0) }) + self!.emojis
+                    }
+                    self?.addingEmoji = false
+                    self?.emojiCollectionView.reloadData()
+                }
+            }
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EmojiAddButtonCell", for: indexPath)
