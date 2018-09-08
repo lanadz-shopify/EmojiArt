@@ -35,7 +35,7 @@
 		F3A4826D212C0BDD009B57B5 /* EmojiArtView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiArtView.swift; sourceTree = "<group>"; };
 		F3A4826F212C1226009B57B5 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		F3A48271212EB6B9009B57B5 /* EmojiDocumentChooserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiDocumentChooserTableViewController.swift; sourceTree = "<group>"; };
-		F3AE42DB214238D3006486EB /* EmojiArt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmojiArt.swift; path = EmojiArt/EmojiArt.swift; sourceTree = "<group>"; };
+		F3AE42DB214238D3006486EB /* EmojiArt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiArt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +52,6 @@
 		F3A4824C212C0A3D009B57B5 = {
 			isa = PBXGroup;
 			children = (
-				F3AE42DB214238D3006486EB /* EmojiArt.swift */,
 				F3A48257212C0A3D009B57B5 /* EmojiArt */,
 				F3A48256212C0A3D009B57B5 /* Products */,
 			);
@@ -69,6 +68,7 @@
 		F3A48257212C0A3D009B57B5 /* EmojiArt */ = {
 			isa = PBXGroup;
 			children = (
+				F3AE42DB214238D3006486EB /* EmojiArt.swift */,
 				F31A3FB6213648F8000EF824 /* TextFiledCollectionViewCell.swift */,
 				F31577C62135874D0080A8DD /* EmojiArtGestures.swift */,
 				F31577C4213113200080A8DD /* EmojiCollectionViewCell.swift */,
