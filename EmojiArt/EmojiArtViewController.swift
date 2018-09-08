@@ -30,6 +30,8 @@ class EmojiArtViewController: UIViewController,
     UICollectionViewDragDelegate,
 UICollectionViewDropDelegate {
 
+    // MARK: - Outlets and Actions
+
     @IBOutlet weak var scrollViewHeight: NSLayoutConstraint!
 
     @IBOutlet weak var scrollViewWidth: NSLayoutConstraint!
@@ -41,8 +43,34 @@ UICollectionViewDropDelegate {
 
     }
 
+    @IBOutlet weak var scrollView: UIScrollView! {
+        didSet {
+            scrollView.maximumZoomScale = 5.0
+            scrollView.minimumZoomScale = 0.1
+            scrollView.delegate = self
+            scrollView.addSubview(emojiArtView)
+        }
+    }
+
+    @IBOutlet weak var emojiCollectionView: UICollectionView! {
+        didSet {
+            emojiCollectionView.delegate = self
+            emojiCollectionView.dataSource = self
+            emojiCollectionView.dragDelegate = self
+            emojiCollectionView.dropDelegate = self
+        }
+    }
+
+    private var addingEmoji = false
+
+    @IBAction func addEmoji(_ sender: UIButton) {
+        addingEmoji = true
+        emojiCollectionView.reloadSections(IndexSet(integer: 0))
+    }
+
     var emojiArtView = EmojiArtView()
 
+    
     // MARK: - Model
     var emojiArt: EmojiArt? {
         get {
@@ -67,16 +95,6 @@ UICollectionViewDropDelegate {
                     }
                 }
             }
-        }
-    }
-
-
-    @IBOutlet weak var scrollView: UIScrollView! {
-        didSet {
-            scrollView.maximumZoomScale = 5.0
-            scrollView.minimumZoomScale = 0.1
-            scrollView.delegate = self
-            scrollView.addSubview(emojiArtView)
         }
     }
 
@@ -113,21 +131,7 @@ UICollectionViewDropDelegate {
 
     var emojis = "🐶🦊🐸🐽🐝🕸🐞🦋🐂🦓🐟🍎🍓🍋🍏🥕🍗🥩🍔🍟".map { String($0) }
 
-    @IBOutlet weak var emojiCollectionView: UICollectionView! {
-        didSet {
-            emojiCollectionView.delegate = self
-            emojiCollectionView.dataSource = self
-            emojiCollectionView.dragDelegate = self
-            emojiCollectionView.dropDelegate = self
-        }
-    }
 
-    private var addingEmoji = false
-
-    @IBAction func addEmoji(_ sender: UIButton) {
-        addingEmoji = true
-        emojiCollectionView.reloadSections(IndexSet(integer: 0))
-    }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
