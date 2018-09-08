@@ -70,7 +70,14 @@ UICollectionViewDropDelegate {
 
     var emojiArtView = EmojiArtView()
 
-    
+    @IBAction func save(_ sender: UIBarButtonItem) {
+        if let json = emojiArt?.json {
+            if let jsonString = String(data: json, encoding: .utf8) {
+                print(jsonString)
+            }
+        }
+    }
+
     // MARK: - Model
     var emojiArt: EmojiArt? {
         get {
