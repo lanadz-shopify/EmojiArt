@@ -8,15 +8,19 @@
 
 import Foundation
 
-struct EmojiArt {
+struct EmojiArt: Codable {
     var url: URL
     var emojiis = [EmojiInfo]()
 
-    struct EmojiInfo {
+    struct EmojiInfo: Codable {
         var x: Int
         var y: Int
         var text: String
         var size: Int
+    }
+
+    var json: Data? {
+        return try? JSONEncoder().encode(self)
     }
 
     init(url: URL, emojis: [EmojiInfo]) {
