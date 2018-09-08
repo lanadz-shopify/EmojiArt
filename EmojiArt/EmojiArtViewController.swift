@@ -10,7 +10,7 @@ import UIKit
 
 extension EmojiArt.EmojiInfo {
     init?(label: UILabel) {
-        if let attributedText = label.attributedText, let font = attributedText.font {
+        if let attributedText = label.attributedText, let font = label.font {
             x = Int(label.center.x)
             y = Int(label.center.y)
             text = attributedText.string
