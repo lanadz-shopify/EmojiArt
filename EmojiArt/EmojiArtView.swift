@@ -36,7 +36,10 @@ class EmojiArtView: UIView, UIDropInteractionDelegate {
         session.loadObjects(ofClass: NSAttributedString.self) { providers in
             let dropPoint = session.location(in: self)
             for attributedString in providers as? [NSAttributedString] ?? [] {
-                self.addLabel(with: attributedString, centeredAt: dropPoint)
+                let font = UIFont.systemFont(ofSize: 100)
+                let attributes = [NSAttributedStringKey.font: font]
+                let attributedQuote = NSAttributedString(string: attributedString.string, attributes: attributes)
+                self.addLabel(with: attributedQuote, centeredAt: dropPoint)
             }
         }
     }
